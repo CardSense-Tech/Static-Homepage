@@ -1,0 +1,16 @@
+<Cards>
+    <Card>
+        <UID>33:A5:6B:35</UID>
+        <Name>Rajat Sawant</Name>
+        <IdNo>P0428</IdNo>
+        <Photo>https://cardsense.in/logo.png</Photo>
+        <IssueDate>2025-09-16</IssueDate>
+    </Card>
+    <Card>
+        <UID>04FFEEDDCCBB</UID>
+        <Name>Jane Smith</Name>
+        <IdNo>EMP124</IdNo>
+        <Photo>https://yourserver.com/photos/jane_smith.jpg</Photo>
+        <IssueDate>2025-09-15</IssueDate>
+    </Card>
+</Cards>
