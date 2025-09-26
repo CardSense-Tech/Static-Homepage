@@ -5,20 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CardSense - Smart RFID & NFC Solutions</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .btn-outline-primary {
+            border: 2px solid #0d6efd;
+            color: #0d6efd;
+            transition: all 0.3s;
+        }
+        .btn-outline-primary:hover {
+            background-color: #0d6efd;
+            color: white;
+        }
+        .nav-link.active {
+            font-weight: bold;
+        }
+        .app-feature-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .app-feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 100px 0;
+        }
+        .platform-badge {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 50px 0;
+                text-align: center;
+            }
+            
+            .display-4 {
+                font-size: 2.5rem;
+            }
+            
+            .platform-badge {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .card {
+                margin-bottom: 20px;
+            }
+            
+            .btn {
+                padding: 12px 20px; /* Larger touch target */
+                width: 100%; /* Full width buttons on mobile */
+                margin-bottom: 10px;
+            }
+            
+            .nav-link {
+                padding: 15px 0; /* Larger touch target for nav items */
+            }
+            
+            .container {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+        
+        /* Improved touch targets for mobile */
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        /* Better spacing for mobile lists */
+        .list-unstyled li {
+            margin-bottom: 12px;
+            padding: 8px 0;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container-md">
             <a class="navbar-brand" href="#">
-                <img src="./images/FINALTEST_LOGO.PNG "alt="CardSense Logo" height="50" class="me-2">
+                <img src="./images/FINALTEST_LOGO.PNG" alt="CardSense Logo" height="50">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#applications">Applications</a></li>
                     <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
@@ -27,71 +108,248 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="text-center py-5 bg-light">
+    <section id="home" class="hero-section">
         <div class="container">
-            <h1 class="display-4">Giving Sense to every Card</h1>
-            <p class="lead">CardSense provides high-quality RFID & NFC solutions for secure and seamless identification.</p>
-            <a href="#products" class="btn btn-primary">Explore Products</a>
+            <div class="row align-items-center gy-4">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold">RFID Solutions for Windows & Android</h1>
+                    <p class="lead">Ready-to-use RFID applications for your Windows PC and Android devices.</p>
+                    <div class="d-flex align-items-center mt-4">
+                        <img src="./images/windows.png" alt="Windows" class="platform-badge">
+                        <img src="./images/Android_Logo.png" alt="Android" class="platform-badge">
+                    </div>
+                    <div class="mt-4">
+                        <div class="d-grid gap-2 d-md-block">
+                            <a href="#applications" class="btn btn-primary me-md-3">Explore Applications</a>
+                            <a href="./downloads/UID_Extraction.exe" class="btn btn-outline-primary">Download Windows App</a>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
         </div>
     </section>
 
-    <!-- Carousel Section
-    <div id="productCarousel" class="carousel slide container my-5" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://via.placeholder.com/1200x400" class="d-block w-100" alt="RFID Cards">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>RFID Cards</h5>
-                    <p>Secure and contactless identification made easy.</p>
+    <!-- Applications Section -->
+    <section id="applications" class="py-4 py-md-5">
+        <div class="container">
+            <h2 class="text-center mb-4">RFID Applications</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="app-feature-card card h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-window me-2 fs-4"></i>
+                                <h5 class="card-title mb-0">Windows Application</h5>
+                            </div>
+                            <p class="card-text">Standalone Windows executable for RFID operations:</p>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check2 text-success me-2"></i>Easy-to-use interface</li>
+                                <li><i class="bi bi-check2 text-success me-2"></i>Direct reader connection</li>
+                                <li><i class="bi bi-check2 text-success me-2"></i>Offline data storage</li>
+                            </ul>
+                            <a href="./downloads/UID_Extraction.exe" class="btn btn-outline-primary mt-3">Download Demo</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://via.placeholder.com/1200x400" class="d-block w-100" alt="NFC Tags">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>NFC Tags</h5>
-                    <p>Tap and connect effortlessly with smart NFC technology.</p>
+                <div class="col-md-6">
+                    <div class="app-feature-card card h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-android2 me-2 fs-4"></i>
+                                <h5 class="card-title mb-0">Android Application</h5>
+                            </div>
+                            <p class="card-text">Mobile app for RFID and NFC operations:</p>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check2 text-success me-2"></i>Play Store available</li>
+                                <li><i class="bi bi-check2 text-success me-2"></i>Phone NFC support</li>
+                                <li><i class="bi bi-check2 text-success me-2"></i>Cloud sync features</li>
+                            </ul>
+                            <a href="./downloads/UID_Extractor.apk" class="btn btn-outline-primary mt-3">Download Demo</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
-    </div> -->
+    </section>
 
-    <!-- Products Section -->
-    <section id="products" class="container my-5">
-        <h2 class="text-center mb-4">Our Products</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="./images/istockphoto-1190431804-612x612.jpg" height="400" class="card-img-top" alt="RFID Card">
-                    <div class="card-body">
-                        <h5 class="card-title">RFID Smart Cards</h5>
-                        <p class="card-text">Ideal for access control and secure transactions.</p>
-                        <a href="" class="btn">Know more</a>
+    <!-- Hardware Products Section -->
+    <section id="products" class="py-4 py-md-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Hardware Solutions</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./images/nfc-card.png" height="400" class="card-img-top" alt="RFID Card">
+                        <div class="card-body">
+                            <h5 class="card-title">RFID Smart Cards</h5>
+                            <p class="card-text">Ideal for access control and secure transactions.</p>
+                            <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#rfidCardDetails">
+                                Know more
+                            </button>
+                            <div class="collapse mt-3" id="rfidCardDetails">
+                                <div class="card card-body border-0 bg-light">
+                                    <h6 class="fw-bold">Mifare Family Cards:</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-dot"></i> Mifare Classic (1K/4K)</li>
+                                        <li><i class="bi bi-dot"></i> Mifare DESFire EV1/EV2/EV3</li>
+                                        <li><i class="bi bi-dot"></i> Mifare Plus (X/SE/EV1)</li>
+                                        <li><i class="bi bi-dot"></i> Mifare Ultralight/Ultralight C</li>
+                                    </ul>
+                                    <h6 class="fw-bold mt-3">Security Features:</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-shield-check text-success"></i> AES/3DES encryption</li>
+                                        <li><i class="bi bi-shield-check text-success"></i> Mutual authentication</li>
+                                        <li><i class="bi bi-shield-check text-success"></i> Anti-cloning protection</li>
+                                    </ul>
+                                    <h6 class="fw-bold mt-3">Customization:</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success"></i> Custom printing & branding</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Multiple memory configurations</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Application-specific data structure</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./images/nfc (1).png" height="400" class="card-img-top" alt="NFC Tag">
+                        <div class="card-body">
+                            <h5 class="card-title">NFC Tags</h5>
+                            <p class="card-text">Enable instant connectivity with a single tap.</p>
+                            <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#nfcTagDetails">
+                                Know more
+                            </button>
+                            <div class="collapse mt-3" id="nfcTagDetails">
+                                <div class="card card-body border-0 bg-light">
+                                    <h6 class="fw-bold">Tag Types:</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-dot"></i> NTAG213/215/216</li>
+                                        <li><i class="bi bi-dot"></i> Type 2/4/5 Tags</li>
+                                        <li><i class="bi bi-dot"></i> Specialized Industrial Tags</li>
+                                    </ul>
+                                    <h6 class="fw-bold mt-3">Applications:</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success"></i> Asset tracking</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Smart packaging</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Access control systems</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./images/rfid.png" height="400" class="card-img-top" alt="RFID Reader">
+                        <div class="card-body">
+                            <h5 class="card-title">RFID Readers</h5>
+                            <p class="card-text">High-performance readers for efficient scanning.</p>
+                            <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#rfidReaderDetails">
+                                Know more
+                            </button>
+                            <div class="collapse mt-3" id="rfidReaderDetails">
+                                <div class="card card-body border-0 bg-light">
+                                    <h6 class="fw-bold">Reader Options:</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-dot"></i> USB Desktop Readers</li>
+                                        <li><i class="bi bi-dot"></i> Industrial Long-Range Readers</li>
+                                        <li><i class="bi bi-dot"></i> Embedded OEM Modules</li>
+                                    </ul>
+                                    <h6 class="fw-bold mt-3">Custom Integration:</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success"></i> SDK/API Support</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Custom firmware options</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> System integration services</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="./images/Secure_tag.jpg" height="400" class="card-img-top" alt="Secure Tag">
+                        <div class="card-body">
+                            <h5 class="card-title">Secure Tags</h5>
+                            <p class="card-text">Advanced anti-counterfeiting and tamper detection solutions.</p>
+                            <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#secureTagDetails">
+                                Know more
+                            </button>
+                            <div class="collapse mt-3" id="secureTagDetails">
+                                <div class="card card-body border-0 bg-light">
+                                    <h6 class="fw-bold">Security Features:</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-shield-fill-check text-success"></i> Tamper-evident design</li>
+                                        <li><i class="bi bi-shield-fill-check text-success"></i> Cryptographic protection</li>
+                                        <li><i class="bi bi-shield-fill-check text-success"></i> Unique digital signature</li>
+                                    </ul>
+                                    <h6 class="fw-bold mt-3">Applications:</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success"></i> Product authentication</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Supply chain tracking</li>
+                                        <li><i class="bi bi-check-circle text-success"></i> Tamper detection</li>
+                                    </ul>
+                                    <h6 class="fw-bold mt-3">Industries:</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-building text-primary"></i> Pharmaceuticals</li>
+                                        <li><i class="bi bi-building text-primary"></i> Luxury goods</li>
+                                        <li><i class="bi bi-building text-primary"></i> Government security</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            
+            <!-- Custom Solutions Section -->
+            <div class="mt-5">
+                <h3 class="text-center mb-4">Custom Solutions</h3>
                 <div class="card">
-                    <img src="./images/istockphoto-1342886317-612x612.jpg" height="400"  class="card-img-top" alt="NFC Tag">
                     <div class="card-body">
-                        <h5 class="card-title">NFC Tags</h5>
-                        <p class="card-text">Enable instant connectivity with a single tap.</p>
-                        <a href="" class="btn">Know more</a>
+                        <h5 class="card-title">Tailored to Your Needs</h5>
+                        <p class="card-text">We specialize in creating custom RFID solutions that perfectly match your requirements:</p>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <h6 class="fw-bold"><i class="bi bi-gear-fill me-2"></i>Hardware Customization</h6>
+                                <ul class="list-unstyled ms-4">
+                                    <li><i class="bi bi-dash"></i> Custom reader configurations</li>
+                                    <li><i class="bi bi-dash"></i> Specialized antenna designs</li>
+                                    <li><i class="bi bi-dash"></i> Branded card solutions</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6 class="fw-bold"><i class="bi bi-code-slash me-2"></i>Software Integration</h6>
+                                <ul class="list-unstyled ms-4">
+                                    <li><i class="bi bi-dash"></i> Custom firmware development</li>
+                                    <li><i class="bi bi-dash"></i> API integration support</li>
+                                    <li><i class="bi bi-dash"></i> Specialized software solutions</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="./images/110311196-nfc-credit-card-reader-linear-icon-nfc-public-transport-payment-thin-line-illustration-rfid-door.jpg" height="400" class="card-img-top" alt="RFID Reader">
-                    <div class="card-body">
-                        <h5 class="card-title">RFID Readers</h5>
-                        <p class="card-text">High-performance readers for efficient scanning.</p>
-                        <a href="" class="btn">Know more</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-4 py-md-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center mb-4">
+                        <i class="bi bi-envelope me-3 fs-4"></i>
+                        <p class="lead mb-0 text-break">CardSense.tech@gmail.com</p>
+                    </div>
+                    <div class="d-flex align-items-center mb-4">
+                        <i class="bi bi-telephone me-3 fs-4"></i>
+                        <p class="lead mb-0">+91 8087880110</p>
                     </div>
                 </div>
             </div>
