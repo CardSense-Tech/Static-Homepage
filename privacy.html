@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Privacy Policy — ID-Validation</title>
+  <style>
+    :root{
+      --bg:#ffffff; --text:#121212; --muted:#555; --accent:#3366CC;
+      --card:#f8f9fb; --maxw:900px;
+      font-family: Inter, Roboto, Arial, sans-serif;
+    }
+    body{background:var(--bg); color:var(--text); margin:0; padding:24px; -webkit-font-smoothing:antialiased;}
+    .wrap{max-width:var(--maxw); margin:0 auto;}
+    header{margin-bottom:18px;}
+    header h1{font-size:22px; margin:0;}
+    p.lead{color:var(--muted); margin-top:6px;}
+    section.card{background:var(--card); border-radius:10px; padding:18px; margin-bottom:14px; box-shadow:0 1px 2px rgba(0,0,0,0.05);}
+    h2{font-size:16px; margin:0 0 8px 0;}
+    h3{font-size:14px; margin:10px 0 6px 0;}
+    ul{margin:8px 0 12px 20px; color:var(--muted);}
+    code{background:#eef2ff; padding:2px 6px; border-radius:4px;}
+    .muted{color:var(--muted);}
+    footer{margin-top:18px; font-size:13px; color:var(--muted);}
+    .small{font-size:13px;}
+    .notice{padding:8px 12px; border-left:4px solid var(--accent); background:#eef4ff; border-radius:6px; margin:8px 0;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>ID-Validation — Privacy Policy</h1>
+      <p class="lead">Effective date: <strong>2025-09-16</strong></p>
+    </header>
+
+    <section class="card">
+      <h2>Summary</h2>
+      <p class="muted">
+        ID-Validation is an Android application that uses NFC to read RFID card identifiers (UIDs) and verifies them against a secure, privately hosted database. This policy explains what data is accessed, why it is needed, how it is handled, and what rights you have.
+      </p>
+      <div class="notice small">
+        <strong>In short:</strong> The app only reads card UIDs, checks them against a private database you operate, and shows associated details (such as name, ID number, or photo) if the ID is valid. No personal data is sent to third parties by this app.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Data Accessed</h2>
+      <h3>1. NFC Card UID</h3>
+      <p class="muted">When a card is tapped, the app reads its UID (unique identifier). This value is used solely to check validity in the private database.</p>
+
+      <h3>2. Database Records</h3>
+      <p class="muted">The app connects to your privately hosted database to fetch matching record details for a scanned UID. These records may contain fields like name, ID number, photo, or issue date. The exact data depends on what you store in your database.</p>
+
+      <h3>3. Images</h3>
+      <p class="muted">If your database contains a photo field, the app may display it on-screen. The photo remains on the device and is not uploaded elsewhere.</p>
+
+      <h3>4. Local Cache</h3>
+      <p class="muted">For performance, the app may temporarily cache the database response. This cache is private to the app and is cleared when the app is reset, data is cleared, or the app is uninstalled.</p>
+    </section>
+
+    <section class="card">
+      <h2>How Data Is Used</h2>
+      <ul>
+        <li><strong>NFC UID</strong> — to look up if an ID exists in your database.</li>
+        <li><strong>Database response</strong> — to display details associated with a valid card.</li>
+        <li><strong>Local cache</strong> — to improve speed during repeated scans.</li>
+      </ul>
+      <p class="muted">All data processing happens locally on the device, except the secure request made to your database.</p>
+    </section>
+
+    <section class="card">
+      <h2>Sharing & Third Parties</h2>
+      <p class="muted">The app does not share your card UIDs or record details with third-party services. Data only flows between the app and your private database under your control. If you host the database with a service provider, their privacy and logging policies may apply.</p>
+    </section>
+
+    <section class="card">
+      <h2>Security</h2>
+      <ul>
+        <li>We recommend hosting the private database on a secure server with HTTPS enabled.</li>
+        <li>All cache and temporary data is stored in the app’s private storage, inaccessible to other apps.</li>
+        <li>NFC scanning requires direct user action (tapping a card).</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Permissions</h2>
+      <ul>
+        <li><strong>NFC</strong> — required to scan cards.</li>
+        <li><strong>Internet</strong> — required to query the private database.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Data Retention</h2>
+      <p class="muted">The app does not permanently store personal data. Temporary cache is cleared on reset, uninstall, or when app data is cleared from system settings. Database records remain on your private server, according to your policies.</p>
+    </section>
+
+    <section class="card">
+      <h2>Your Rights</h2>
+      <ul>
+        <li>You can clear app data or uninstall at any time to remove cached info.</li>
+        <li>You control what information is stored in the private database.</li>
+        <li>The app does not use analytics, ads, or hidden tracking.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Changes</h2>
+      <p class="muted">This privacy policy may be updated occasionally. Any significant changes will be reflected with an updated effective date.</p>
+    </section>
+
+    <section class="card" id="contact">
+      <h2>Contact</h2>
+      <p class="muted">For questions or concerns about privacy, contact:</p>
+      <ul>
+        <li>Email: <a href="mailto:privacy@example.com">privacy@example.com</a></li>
+        <li>Developer: Your Name / Company</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p class="small muted">© <span id="year"></span> Your Company. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
